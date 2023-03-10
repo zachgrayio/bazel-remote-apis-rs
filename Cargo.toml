@@ -9,13 +9,16 @@ homepage = "https://github.com/leakingtapan/bazel-remote-apis-rs"
 repository = "https://github.com/leakingtapan/bazel-remote-apis-rs.git"
 keywords = ["Bazel"]
 
+[lib]
+crate-type = ["cdylib", "rlib"]
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
-anyhow = "1.0.40"
-prost = "0.11.6"
-prost-types = "0.11.6"
-tokio = {version = "1.4.0", features = ["full"]}
-tonic = "0.8.3"
+anyhow = { version = "1.0.40", default-features = false }
+prost = { version = "0.11.6", features = ["prost-derive"], default-features = false }
+prost-types = { version = "0.11.6", features = ["std"], default-features = false }
+tonic = { version = "0.8.3", features = ["codegen", "prost-derive", "prost"], default-features = false }
+
 
 [build-dependencies]
-tonic-build = "0.8.4"
+tonic-build = { version = "0.8.4", features = ["prost-build", "prost"], default-features = false }

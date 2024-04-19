@@ -25,7 +25,3 @@ pub mod google {
         tonic::include_proto!("google.bytestream");
     }
 }
-
-pub mod kv_storage {
-    tonic::include_proto!("kv_storage");
-}

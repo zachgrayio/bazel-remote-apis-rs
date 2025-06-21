@@ -15,10 +15,10 @@ crate-type = ["cdylib", "rlib"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
 anyhow = { version = "1.0.40", default-features = false }
-prost = { version = "0.12.6", features = ["prost-derive"], default-features = false }
-prost-types = { version = "0.12.6", features = ["std"], default-features = false }
-tonic = { version = "0.11.0", features = ["codegen", "prost"], default-features = false }
+prost = { version = "0.13.5", features = ["prost-derive"], default-features = false }
+prost-types = { version = "0.13.5", features = ["std"], default-features = false }
+tonic = { version = "0.13.1", features = ["codegen", "prost"], default-features = false }
 
 
 [build-dependencies]
-tonic-build = { version = "0.11.0", features = ["prost"], default-features = false }
+tonic-build = { version = "0.13.1", features = ["prost"], default-features = false }

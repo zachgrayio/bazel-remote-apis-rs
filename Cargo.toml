@@ -1,7 +1,7 @@
 [package]
 name = "bazel-remote-apis-rs"
-version = "0.1.0"
-edition = "2021"
+version = "0.10.0"
+edition = "2024"
 description = "Language binding for Bazel remote APIs for Rust"
 authors = ["Cheng Pan <pancheng1987@gmail.com>"]
 license = "MIT"
@@ -15,10 +15,11 @@ crate-type = ["cdylib", "rlib"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
 anyhow = { version = "1.0.40", default-features = false }
-prost = { version = "0.13.5", features = ["prost-derive"], default-features = false }
-prost-types = { version = "0.13.5", features = ["std"], default-features = false }
-tonic = { version = "0.13.1", features = ["codegen", "prost"], default-features = false }
+prost = { version = "0.14.3", features = ["derive"], default-features = false }
+prost-types = { version = "0.14.3", features = ["std"], default-features = false }
+tonic = { version = "0.14.5", features = ["codegen", "transport"], default-features = false }
+tonic-prost = { version = "0.14.5", default-features = false }
 
 
 [build-dependencies]
-tonic-build = { version = "0.13.1", features = ["prost"], default-features = false }
+tonic-prost-build = "0.14.5"
